@@ -1,35 +1,35 @@
 .experience-container {
-  padding: 40px 60px;
-  background-color: #e3f2fd;
-  color: #2c3e50;
+  padding: 20px;
+  background-color: #e8f4f8; /* Light blue background */
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
-.experience-title {
-  font-size: 2.2em;
+.experience-tabs {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 30px; /* Increase spacing between buttons */
   margin-bottom: 20px;
 }
 
-.job {
-  margin-bottom: 40px;
-  border-left: 4px solid #8ed1a6; /* light green */
-  padding-left: 20px;
+.experience-tabs button {
+  padding: 15px 40px; /* Increase padding to make buttons larger */
+  background-color: transparent;
+  border: 1px solid #b2ffd6; /* Light green border */
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1.1rem; /* Increase font size for better visibility */
+  border-radius: 8px; /* Optional: Add a subtle border-radius */
 }
 
-.job-role {
-  font-size: 1.5em;
-  margin: 0;
+.experience-tabs button.active {
+  background-color: #b2ffd6; /* Light green background */
 }
 
-.job-company {
+.experience-content .experience-item {
+  margin-bottom: 15px;
+}
+
+.experience-content .experience-item span {
   font-weight: bold;
-  margin: 5px 0;
-}
-
-.job-duration {
-  font-style: italic;
-  margin: 5px 0;
-}
-
-.job-description {
-  margin: 10px 0 0 0;
 }

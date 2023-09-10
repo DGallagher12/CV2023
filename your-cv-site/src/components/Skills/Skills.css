@@ -1,0 +1,24 @@
+.skills-container {
+  padding: 20px;
+  background-color: #e8f4f8; /* Light blue background */
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.skills-list {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  background-color: #b2ffd6; /* Light green background */
+  padding: 10px 15px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
