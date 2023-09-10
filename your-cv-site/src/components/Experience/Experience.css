@@ -1,0 +1,35 @@
+.experience-container {
+  padding: 40px 60px;
+  background-color: #e3f2fd;
+  color: #2c3e50;
+}
+
+.experience-title {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.job {
+  margin-bottom: 40px;
+  border-left: 4px solid #8ed1a6; /* light green */
+  padding-left: 20px;
+}
+
+.job-role {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.job-company {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.job-duration {
+  font-style: italic;
+  margin: 5px 0;
+}
+
+.job-description {
+  margin: 10px 0 0 0;
+}
