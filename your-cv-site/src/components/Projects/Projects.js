@@ -1,41 +1,30 @@
-// src/components/Projects/Projects.js
-
 import React from "react";
-import "./Projects.css";
+import ProjectCard from "./ProjectCard.js";
 
-const projectData = [
+const sampleProjects = [
   {
-    title: "Project One",
-    description:
-      "This is a brief description of Project One. It was created using React and connects to a backend built with Ruby on Rails.",
-    techStack: ["React", "Ruby on Rails"],
-    link: "https://projectone.com",
-    source: "https://github.com/username/project-one",
+    title: "Project 1",
+    shortDescription: "This is a sample description for Project 1.",
+    tags: ["React", "Web App"],
+    image: "path_to_image_1.jpg",
   },
-  // ... Add other projects in a similar structure here
+  {
+    title: "Project 2",
+    shortDescription: "This is a sample description for Project 2.",
+    tags: ["React", "Web App"],
+    image: "path_to_image_2.jpg",
+  },
+  //... add more sample projects
 ];
 
-const Projects = () => {
+function Projects() {
   return (
     <div className="projects-container">
-      <h2>Projects</h2>
-      {projectData.map((project, index) => (
-        <div key={index} className="project-card">
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <p>
-            <strong>Tech Stack:</strong> {project.techStack.join(", ")}
-          </p>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            Live Project
-          </a>
-          <a href={project.source} target="_blank" rel="noopener noreferrer">
-            Source Code
-          </a>
-        </div>
+      {sampleProjects.map((project) => (
+        <ProjectCard key={project.title} project={project} />
       ))}
     </div>
   );
-};
+}
 
 export default Projects;
