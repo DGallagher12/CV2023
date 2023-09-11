@@ -1,73 +1,148 @@
-// src/components/Experience/Experience.js
-
 import React, { useState } from "react";
 import "./Experience.css";
 
-const educationData = [
-  // Sample data
-  {
-    year: "2020 - 2023",
-    description: "Bachelor in Computer Science, University X",
-  },
-  // ... Other educational experiences
-];
-
-const professionalData = [
-  // Sample data
-  { year: "2023 - Present", description: "Software Developer, TechCompany Y" },
-  // ... Other professional experiences
-];
-
-const personalData = [
-  // Sample data
-  {
-    year: "2021",
-    description: "Developed a personal project using React and Node.js",
-  },
-  // ... Other personal experiences
-];
-
 const Experience = () => {
-  const [selectedTab, setSelectedTab] = useState("education"); // Default to showing 'education'
+  const [activeTab, setActiveTab] = useState("work"); // Default is 'work'
+  const [activeWorkIndex, setActiveWorkIndex] = useState(0);
+  const [activeEducationIndex, setActiveEducationIndex] = useState(0);
 
-  const renderData = (data) => {
-    return data.map((entry, index) => (
-      <div key={index} className="experience-item">
-        <span>{entry.year}</span>
-        <p>{entry.description}</p>
-      </div>
-    ));
-  };
+  const workEntries = [
+    {
+      company: "Company 1",
+      role: "Role 1",
+      duration: "Year-Year",
+      description: "Description 1",
+    },
+    {
+      company: "Company 2",
+      role: "Role 2",
+      duration: "Year-Year",
+      description: "Description 2",
+    },
+    {
+      company: "Company 3",
+      role: "Role 3",
+      duration: "Year-Year",
+      description: "Description 3",
+    },
+    // Add more entries as needed
+  ];
+
+  const educationEntries = [
+    {
+      university: "University 1",
+      degree: "Degree 1",
+      duration: "Year-Year",
+      description: "Description 1",
+    },
+    {
+      university: "University 2",
+      degree: "Degree 2",
+      duration: "Year-Year",
+      description: "Description 2",
+    },
+    {
+      university: "University 3",
+      degree: "Degree 3",
+      duration: "Year-Year",
+      description: "Description 3",
+    },
+    // Add more entries as needed
+  ];
 
   return (
-    <div className="experience-container">
-      <h2>Experience</h2>
-      <div className="experience-tabs">
+    <div className="experience">
+      <div className="tabs">
         <button
-          onClick={() => setSelectedTab("education")}
-          className={selectedTab === "education" ? "active" : ""}
+          className={`tab-button ${activeTab === "work" && "active"}`}
+          onClick={() => setActiveTab("work")}
+        >
+          Work
+        </button>
+        <button
+          className={`tab-button ${activeTab === "education" && "active"}`}
+          onClick={() => setActiveTab("education")}
         >
           Education
         </button>
-        <button
-          onClick={() => setSelectedTab("professional")}
-          className={selectedTab === "professional" ? "active" : ""}
-        >
-          Professional
-        </button>
-        <button
-          onClick={() => setSelectedTab("personal")}
-          className={selectedTab === "personal" ? "active" : ""}
-        >
-          Personal
-        </button>
       </div>
 
-      <div className="experience-content">
-        {selectedTab === "education" && renderData(educationData)}
-        {selectedTab === "professional" && renderData(professionalData)}
-        {selectedTab === "personal" && renderData(personalData)}
-      </div>
+      {activeTab === "work" && (
+        <div className="work-experience">
+          <h3>{workEntries[activeWorkIndex].company}</h3>
+          <p>Role: {workEntries[activeWorkIndex].role}</p>
+          <p>Duration: {workEntries[activeWorkIndex].duration}</p>
+          <p>Description: {workEntries[activeWorkIndex].description}</p>
+
+          <div className="navigation">
+            <button
+              onClick={() =>
+                setActiveWorkIndex(
+                  (prevIndex) =>
+                    (prevIndex - 1 + workEntries.length) % workEntries.length
+                )
+              }
+            >
+              &lt;
+            </button>
+            {workEntries.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${index === activeWorkIndex && "active"}`}
+              ></span>
+            ))}
+            <button
+              onClick={() =>
+                setActiveWorkIndex(
+                  (prevIndex) => (prevIndex + 1) % workEntries.length
+                )
+              }
+            >
+              &gt;
+            </button>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "education" && (
+        <div className="education-experience">
+          <h3>{educationEntries[activeEducationIndex].university}</h3>
+          <p>Degree: {educationEntries[activeEducationIndex].degree}</p>
+          <p>Duration: {educationEntries[activeEducationIndex].duration}</p>
+          <p>
+            Description: {educationEntries[activeEducationIndex].description}
+          </p>
+
+          <div className="navigation">
+            <button
+              onClick={() =>
+                setActiveEducationIndex(
+                  (prevIndex) =>
+                    (prevIndex - 1 + educationEntries.length) %
+                    educationEntries.length
+                )
+              }
+            >
+              &lt;
+            </button>
+            {educationEntries.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${index === activeEducationIndex && "active"}`}
+              ></span>
+            ))}
+            <button
+              onClick={() =>
+                setActiveEducationIndex(
+                  (prevIndex) => (prevIndex + 1) % educationEntries.length
+                )
+              }
+            >
+              &gt;
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

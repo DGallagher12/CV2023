@@ -1,17 +1,18 @@
-.about-container {
-  padding: 40px 60px;
-  background-color: #e3f2fd; /* even lighter blue for variation */
-  color: black;
+.about-section {
+  background-color: #e8f9f3; /* Lighter shade of green for distinction */
+  padding: 50px 15%; /* Adjust the 15% to give more or less side space as per design requirement */
+  color: #000; /* Black text */
 }
 
-.about-title {
-  font-size: 2.2em;
+.about-section h2 {
+  font-size: 2rem; /* Make the title stand out */
   margin-bottom: 20px;
-  color: #045a76; /* dark blue for contrast */
 }
 
-.about-description {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-  line-height: 1.6;
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.6; /* Improve readability */
+  margin-bottom: 20px; /* Spacing between paragraphs */
 }
+
+/* Optional styling for any additional elements or CTAs you add */

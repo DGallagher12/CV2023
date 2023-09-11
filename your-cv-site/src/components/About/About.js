@@ -3,25 +3,22 @@ import "./About.css";
 
 const About = () => {
   return (
-    <section id="about" className="about-container">
-      <h2 className="about-title">About Me</h2>
-      <p className="about-description">
-        With nearly a decade of experience in customer support for leading tech
-        companies, I have honed my skills in troubleshooting, effective
-        communication, and user advocacy. Recognizing the growing importance of
-        tech knowledge, I recently completed a comprehensive full-stack web
-        development course. This program empowered me with proficiency in a
-        suite of modern web technologies, including Java, JavaScript, React, and
-        Ruby on Rails.
+    <section className="about-section">
+      <h2>About Me</h2>
+      <p>
+        With over 9 years of experience in customer support for a leading tech
+        company, I have honed my skills in problem-solving, effective
+        communication, and providing unmatched service. Recently, I embarked on
+        a journey into the realm of full-stack web development and successfully
+        completed an intensive course, gaining proficiency in Java, JavaScript,
+        React, Ruby on Rails, SQL, and other cutting-edge technologies.
       </p>
-      <p className="about-description">
-        Throughout my career, I've always been passionate about blending my
-        technical acumen with my natural people skills. This unique combination
-        allows me to not only diagnose and resolve issues but also to offer a
-        tailored and user-friendly solution. I'm now eager to pivot towards a
-        more technical role, where I can leverage both my past experience and my
-        new coding skills to contribute to meaningful projects.
+      <p>
+        Outside of my professional life, I am an avid reader, a tech enthusiast,
+        and always keen on exploring the latest innovations in the web
+        development world.
       </p>
+      {/* Optionally, you can add a small section or a call-to-action here */}
     </section>
   );
 };

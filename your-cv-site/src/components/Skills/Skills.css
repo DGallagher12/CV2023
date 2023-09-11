@@ -1,24 +1,53 @@
-.skills-container {
-  padding: 20px;
-  background-color: #e8f4f8; /* Light blue background */
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
-.skills-list {
-  justify-content: center;
+.skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px 30px;
+  justify-content: center;
+  position: relative;
+  transition: margin 0.3s ease-in-out; /* New: smooth out the repositioning of elements */
 }
 
-.skill-item {
-  background-color: #b2ffd6; /* Light green background */
-  padding: 10px 15px;
-  border-radius: 3px;
-  font-weight: 500;
+.skill-card {
+  width: 120px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #b2ffd6;
+  border-radius: 8px;
+  transition: all 0.3s, margin-bottom 0.3s ease-in-out; /* Adjusted for new transition effect */
+  cursor: pointer;
+  margin-bottom: 10px; /* Default margin */
+  position: relative;
 }
 
-h2 {
-  margin-bottom: 15px;
+.skill-card:hover {
+  margin-bottom: 70px; /* Adjusted: Increase bottom margin to create space for description */
+}
+
+.skill-description {
+  text-align: center;
+  font-size: 10px;
+  color: #333;
+  opacity: 0;
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 2px solid #b2ffd6;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(-10px);
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.skill-card:hover .skill-description {
+  opacity: 1;
+  transform: translateY(0);
 }
