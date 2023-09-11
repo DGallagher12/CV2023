@@ -40,3 +40,7 @@
 .main-content {
   margin-left: 250px; /* This is the width of the sidebar as defined in Contact.css */
 }
+
+* {
+  box-sizing: border-box;
+}
